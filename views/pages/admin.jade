@@ -1,0 +1,42 @@
+extends ../layout
+
+block content
+    .container
+        .row
+         form.form-horizontal(method="post",action="/admin/movie/new")
+            input(type="hidden",name="movie[_id]",value="#{movie._id}")
+            .form-group
+                label.col-sm-2.control-label(for="inputTitle") 电影名称
+                .col-sm-10
+                    input#inputTitle.form-control(type="text",name="movie[title]",value="#{movie.title}")
+            .form-group
+                label.col-sm-2.control-label(for="inputAuthor") 电影导演
+                .col-sm-10
+                    input#inputAuthor.form-control(type="text",name="movie[author]",value="#{movie.author}")
+            .form-group
+                label.col-sm-2.control-label(for="inputCountry") 国家
+                .col-sm-10
+                    input#inputCountry.form-control(type="text",name="movie[country]",value="#{movie.country}") 
+            .form-group
+                label.col-sm-2.control-label(for="inputLanguage") 语种
+                .col-sm-10
+                    input#inputLanguage.form-control(type="text",name="movie[language]",value="#{movie.language}")
+            .form-group
+                label.col-sm-2.control-label(for="inputImgSrc") 海报地址
+                .col-sm-10
+                    input#inputImgSrc.form-control(type="text",name="movie[poster]",value="#{movie.poster}")
+            .form-group
+                label.col-sm-2.control-label(for="inputSrc") 片源地址
+                .col-sm-10
+                    input#inputSrc.form-control(type="text",name="movie[flash]",value="#{movie.flash}")
+            .form-group
+                label.col-sm-2.control-label(for="inputTime") 上映年代
+                .col-sm-10
+                    input#inputTime.form-control(type="text",name="movie[year]",value="#{movie.year}")
+            .form-group
+                label.col-sm-2.control-label(for="inputComment") 电影简介
+                .col-sm-10
+                    textarea#inputComment.form-control(type="text",name="movie[comment]",value="#{movie.comment}") 
+            .form-group
+                .col-sm-offset-2.col-sm-2
+                button.btn.btn-default(type="submit") 录入     
